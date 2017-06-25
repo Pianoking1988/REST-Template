@@ -3,11 +3,12 @@
 ## Description
 
 Template for any REST based webservice, including:
-* REST versionizing(/v1/..., /v2/...)
+* REST versionizing via /v1/..., /v2/...
 
 ## Technologies
 
-* Spring-Boot / Spring
+* _Spring-Boot_ / _Spring-
+* _Swagger_ for documentation of the rest service
 
 ## Still missing / In the future
 
