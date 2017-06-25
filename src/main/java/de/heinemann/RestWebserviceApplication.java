@@ -1,3 +1,4 @@
+package de.heinemann;
 
 
 import org.springframework.boot.SpringApplication;
