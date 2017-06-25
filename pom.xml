@@ -17,6 +17,7 @@
 		<java.version>1.8</java.version>
 		<lombok.version>1.16.14</lombok.version>
 		<swagger2.version>2.6.1</swagger2.version>
+		<modelmapper.version>1.0.0</modelmapper.version>
 	</properties>
 
 	<!-- Parent POM for dependency management. -->
@@ -27,7 +28,6 @@
 	</parent>
 
 	<dependencies>
-
 		<!-- Starter for building web, REST applications. It uses tomcat server 
 			as default embedded server. -->
 		<dependency>
@@ -54,6 +54,13 @@
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>${swagger2.version}</version>
+		</dependency>
+
+		<!-- Maps between java classes, like rest <-> api domain and api domain <-> respository domain -->
+		<dependency>
+		    <groupId>org.modelmapper</groupId>
+		    <artifactId>modelmapper</artifactId>
+		    <version>${modelmapper.version}</version>
 		</dependency>
 
 		<!-- Provides classes to test spring boot applications. -->

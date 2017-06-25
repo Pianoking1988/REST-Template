@@ -7,8 +7,13 @@ Template for any REST based webservice, including:
 
 ## Technologies
 
-* _Spring-Boot_ / _Spring-
+* _Spring-Boot_ / _Spring_
 * _Swagger_ for documentation of the rest service
+
+## Problems / Issues
+
+* Swagger does not recognize within request documention that V1 uses v1 user and not v2 user.
+  Response documentation is fine.
 
 ## Still missing / In the future
 

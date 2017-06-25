@@ -1,4 +1,4 @@
-package de.heinemann.rest.v1.controller;
+package de.heinemann.rest.v2.controller;
 
 import java.util.List;
 
@@ -11,16 +11,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import de.heinemann.api.YourApi;
-import de.heinemann.rest.v1.domain.V1User;
+import de.heinemann.rest.v2.domain.V2User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
 @RestController
-@RequestMapping(value ="/v1/users")
+@RequestMapping(value ="/v2/users")
 @Api(description="RESTful CRUD operations for users")
-public class V1UserController {
+public class V2UserController {
 
 	@Autowired
 	private ModelMapper modelMapper;
@@ -30,8 +30,8 @@ public class V1UserController {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	@ApiOperation(value="Get all users")
-	public List<V1User> getUsers() {
-		return modelMapper.map(api.getUsers(), new TypeToken<List<V1User>>() {}.getType());
+	public List<V2User> getUsers() {
+		return modelMapper.map(api.getUsers(), new TypeToken<List<V2User>>() {}.getType());
 	}
 
 	@RequestMapping(value="/{id}", method = RequestMethod.GET)
@@ -40,8 +40,8 @@ public class V1UserController {
 			@ApiResponse(code = 200, message="Successfully retrieved user"),
 			@ApiResponse(code = 404, message="User with id not found")
 	})
-	public V1User getUser(@PathVariable long id) {
-		return modelMapper.map(api.getUser(id), V1User.class);
+	public V2User getUser(@PathVariable long id) {
+		return modelMapper.map(api.getUser(id), V2User.class);
 	}	
 	
 }
