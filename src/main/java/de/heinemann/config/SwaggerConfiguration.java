@@ -30,10 +30,11 @@ public class SwaggerConfiguration {
   private String version;
 
   @Bean
-  public Docket api() {
+  public Docket apiV1() {
     return new Docket(DocumentationType.SWAGGER_2)
+    	.groupName("v1")
         .select()
-        .apis(RequestHandlerSelectors.basePackage("de.heinemann.rest"))
+        .apis(RequestHandlerSelectors.basePackage("de.heinemann.rest.v1"))
         .paths(PathSelectors.any())
         .build()
         .apiInfo(new ApiInfoBuilder()
@@ -43,4 +44,21 @@ public class SwaggerConfiguration {
             .build());
 
   }
+  
+  @Bean
+  public Docket api2V2() {
+    return new Docket(DocumentationType.SWAGGER_2)
+    	.groupName("v2")
+        .select()
+        .apis(RequestHandlerSelectors.basePackage("de.heinemann.rest.v2"))
+        .paths(PathSelectors.any())
+        .build()
+        .apiInfo(new ApiInfoBuilder()
+            .title(title)
+            .description(description)
+            .version(version)
+            .build());
+
+  }
+  
 }
