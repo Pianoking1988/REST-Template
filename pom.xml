@@ -43,7 +43,13 @@
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-
+		
+		<!-- Provides possibility of thymeleaf template use for welcome page or other pages. -->	
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		
 		<!-- Creates documentation of rest service and provides it as html page. -->
 		<dependency>
 			<groupId>io.springfox</groupId>

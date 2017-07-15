@@ -4,6 +4,7 @@
 
 Template for any REST based webservice, including:
 * REST versionizing via /v1/..., /v2/...
+* documentation of the interfaces via Swagger
 
 ## Technologies
 
@@ -12,9 +13,10 @@ Template for any REST based webservice, including:
 
 ## Problems / Issues
 
-* Swagger does not recognize within request documention that V1 uses v1 user and not v2 user.
-  Response documentation is fine.
-
 ## Still missing / In the future
 
+* Logback
+* Flyway
+* Database & In-Memory Database
+* JGiven
 * Lombok for automatic generation of getters, setters and boilerplate class methods

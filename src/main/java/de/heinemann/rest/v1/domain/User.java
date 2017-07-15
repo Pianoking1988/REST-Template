@@ -4,7 +4,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 @ApiModel(value="User", description="User identified by its unique id")
-public class V1User {
+public class User {
 	
 	@ApiModelProperty(notes="Unique id of the user")
 	private long id;

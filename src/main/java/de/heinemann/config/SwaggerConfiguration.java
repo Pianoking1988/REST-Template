@@ -1,6 +1,5 @@
 package de.heinemann.config;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,52 +12,43 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * Configuration for swagger documentation of the rest webservice.
- * 
- * The attributes like title, description or version have the name of the
- * property as default value, such that it is obvious in the GUI if they
- * are not filled and that a possible test can recognize it.
  */
 @Configuration
 @EnableSwagger2
 public class SwaggerConfiguration {
 
-  @Value(value = "${swagger.title:swagger.title}")
-  private String title;
-  @Value(value = "${swagger.description:swagger.description}")
-  private String description;
-  @Value(value = "${swagger.version:swagger.version}")
-  private String version;
-
-  @Bean
-  public Docket apiV1() {
-    return new Docket(DocumentationType.SWAGGER_2)
-    	.groupName("v1")
-        .select()
-        .apis(RequestHandlerSelectors.basePackage("de.heinemann.rest.v1"))
-        .paths(PathSelectors.any())
-        .build()
-        .apiInfo(new ApiInfoBuilder()
-            .title(title)
-            .description(description)
-            .version(version)
-            .build());
-
-  }
+	private final String BASE_PACKAGE = "de.heinemann.rest.";
+	
+	@Bean
+	public Docket apiV1() {
+		final String VERSION = "1";
+		return new Docket(DocumentationType.SWAGGER_2)
+	    	.groupName("v" + VERSION)
+	        .select()
+	        .apis(RequestHandlerSelectors.basePackage(BASE_PACKAGE + "v" + VERSION))
+	        .paths(PathSelectors.any())
+	        .build()
+	        .apiInfo(new ApiInfoBuilder()
+	            .title("Rest webservice template version " + VERSION)
+	            .description("Shows the documentation of the rest service")
+	            .version(VERSION)
+	            .build());
+	}
   
-  @Bean
-  public Docket api2V2() {
-    return new Docket(DocumentationType.SWAGGER_2)
-    	.groupName("v2")
-        .select()
-        .apis(RequestHandlerSelectors.basePackage("de.heinemann.rest.v2"))
-        .paths(PathSelectors.any())
-        .build()
-        .apiInfo(new ApiInfoBuilder()
-            .title(title)
-            .description(description)
-            .version(version)
-            .build());
-
-  }
+	@Bean
+	public Docket apiV2() {
+		final String VERSION = "2";
+	    return new Docket(DocumentationType.SWAGGER_2)
+	    	.groupName("v" + VERSION)
+	        .select()
+	        .apis(RequestHandlerSelectors.basePackage(BASE_PACKAGE + "v" + VERSION))
+	        .paths(PathSelectors.any())
+	        .build()
+	        .apiInfo(new ApiInfoBuilder()
+		            .title("Rest webservice template version " + VERSION)
+		            .description("Shows the documentation of the rest service")
+		            .version(VERSION)
+		            .build());
+	}
   
 }
