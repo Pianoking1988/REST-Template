@@ -2,9 +2,11 @@ package de.heinemann.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@ComponentScan(basePackages = { "de.heinemann" })
 public class ApplicationConfig {
 
 	/**

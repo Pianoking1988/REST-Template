@@ -9,8 +9,8 @@ public class User {
 	@ApiModelProperty(notes="Unique id of the user")
 	private long id;
 	
-	@ApiModelProperty(notes="Name of the user")
-	private String name = "";
+	@ApiModelProperty(notes="Mail of the user")
+	private String mail = "";
 	
 	public long getId() {
 		return id;
@@ -20,12 +20,12 @@ public class User {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getMail() {
+		return mail;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setMail(String mail) {
+		this.mail = mail;
 	}
 	
 }

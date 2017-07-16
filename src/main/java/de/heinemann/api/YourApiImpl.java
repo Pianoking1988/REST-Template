@@ -1,26 +1,27 @@
 package de.heinemann.api;
 
-import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import de.heinemann.domain.User;
+import de.heinemann.repository.UserRepository;
 
 @Component
 public class YourApiImpl implements YourApi {
-
+	
+	@Autowired
+	private UserRepository userRepository;
+	
 	@Override
 	public List<User> getUsers() {
-		return Arrays.asList(
-				new User(1, "User 1", 11),
-				new User(2, "User 2", 12)
-		);		
+		return userRepository.findAll();
 	}
 
 	@Override
 	public User getUser(long id) {
-		return new User(id, "User " + id, (int) id + 10);
+		return new User(id, "user" + id + "@rest.de", "admin");
 	}
 	
 }

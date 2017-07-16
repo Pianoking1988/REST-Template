@@ -15,9 +15,11 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<lombok.version>1.16.14</lombok.version>
 		<swagger2.version>2.6.1</swagger2.version>
 		<modelmapper.version>1.0.0</modelmapper.version>
+		<postgres.version>9.4.1208</postgres.version>
+		<hsqldb.version>2.3.2</hsqldb.version>
+		<flyway.version>4.0.3</flyway.version>
 	</properties>
 
 	<!-- Parent POM for dependency management. -->
@@ -33,6 +35,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- Provides functionality for spring-data and spring-jpa. -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 
 		<!-- Provides developer tools. These tools are helpful in application development 
@@ -62,12 +70,37 @@
 			<version>${swagger2.version}</version>
 		</dependency>
 
-		<!-- Maps between java classes, like rest <-> api domain and api domain <-> respository domain -->
+		<!-- Maps between java classes, like rest <-> api domain and api domain <-> respository domain. -->
 		<dependency>
 		    <groupId>org.modelmapper</groupId>
 		    <artifactId>modelmapper</artifactId>
 		    <version>${modelmapper.version}</version>
 		</dependency>
+
+		<!-- Provides database connection pool. -->		
+		<dependency>
+			<groupId>com.zaxxer</groupId>
+			<artifactId>HikariCP-java7</artifactId>
+		</dependency>		
+
+		<!-- Driver for postgresql database. Only necessary if postgresql database is used. -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+		</dependency>
+		
+		<!-- Driver for hsqldb database. Necessary for instant local run after downloading sources
+		    and for unit tests. -->
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+		</dependency>
+		
+		<!-- Provides execution of sql scripts when application starts for table updates and more. -->
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+		</dependency>		
 
 		<!-- Provides classes to test spring boot applications. -->
 		<dependency>

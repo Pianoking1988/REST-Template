@@ -33,7 +33,8 @@ public class UserController {
 	@RequestMapping(method = RequestMethod.GET)
 	@ApiOperation(value="Get all users")
 	public List<User> getUsers() {
-		return modelMapper.map(api.getUsers(), new TypeToken<List<User>>() {}.getType());
+		List<de.heinemann.domain.User> apiUsers = api.getUsers();
+		return modelMapper.map(apiUsers, new TypeToken<List<User>>() {}.getType());
 	}
 
 	@RequestMapping(value="/{id}", method = RequestMethod.GET)
