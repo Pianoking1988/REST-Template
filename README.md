@@ -9,7 +9,7 @@ Template for any REST based webservice, including:
 
 ## How to ...
 
-* ... connect my own database instead of the in-memory database?
+### ... connect my own database instead of the in-memory database?
 
 1. Make sure that your database driver exists within _pom.xml_, otherwise add it
 2. Add the database connection properties and the flyway location paths to the VM arguments of your run configuration, for example:
