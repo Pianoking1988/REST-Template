@@ -85,6 +85,12 @@
 			<artifactId>HikariCP-java7</artifactId>
 		</dependency>
 
+		<!-- Provides database connection pool. -->
+		<dependency>
+			<groupId>com.zaxxer</groupId>
+			<artifactId>HikariCP-java7</artifactId>
+		</dependency>
+
 		<!-- Driver for postgresql database. Only necessary if postgresql database is used. -->
 		<dependency>
 			<groupId>org.postgresql</groupId>
@@ -136,6 +142,7 @@
 		    <version>1.3</version>
 		    <scope>test</scope>
 		</dependency>
+
 	</dependencies>
 
 	<build>

@@ -19,24 +19,24 @@ public class User {
 	private String createdBy = null;
 
 	public User() {}
-	
+
 	public User(long id, String mail, String createdBy) {
 		setId(id);
 		setMail(mail);
 		setCreatedBy(createdBy);
 	}
-	
+
 	public User(String mail) {
 		this.mail = mail;
 	}
-	
+
 	public User(long id, String mail, Calendar created, String createdBy) {
 		this(mail);
 		this.id = id;
 		this.created = created;
 		this.createdBy = createdBy;
 	}
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public long getId() {

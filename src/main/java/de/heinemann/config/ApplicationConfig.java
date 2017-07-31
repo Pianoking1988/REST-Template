@@ -10,11 +10,11 @@ import org.springframework.context.annotation.Configuration;
 public class ApplicationConfig {
 
 	/**
-	 * Maps between java classes, like rest <-> api domain and api domain <-> respository domain. 
+	 * Maps between java classes, like rest <-> api domain and api domain <-> respository domain.
 	 */
 	@Bean
 	public ModelMapper modelMapper() {
 	    return new ModelMapper();
 	}
-	
+
 }

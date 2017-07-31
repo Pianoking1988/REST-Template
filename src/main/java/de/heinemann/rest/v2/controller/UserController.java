@@ -26,10 +26,10 @@ public class UserController {
 
 	@Autowired
 	private ModelMapper modelMapper;
-	
+
 	@Autowired
-	private YourApi api;	
-	
+	private YourApi api;
+
 	@RequestMapping(method = RequestMethod.GET)
 	@ApiOperation(value="Get all users")
 	public List<User> getUsers() {
@@ -44,6 +44,6 @@ public class UserController {
 	})
 	public User getUser(@PathVariable long id) {
 		return modelMapper.map(api.getUser(id), User.class);
-	}	
-	
+	}
+
 }

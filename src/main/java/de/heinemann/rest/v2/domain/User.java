@@ -5,13 +5,13 @@ import io.swagger.annotations.ApiModelProperty;
 
 @ApiModel(value="User", description="User identified by its unique id")
 public class User {
-	
+
 	@ApiModelProperty(notes="Unique id of the user")
 	private long id;
-	
+
 	@ApiModelProperty(notes="Name of the user")
 	private String name = "";
-	
+
 	@ApiModelProperty(notes="Age of the user")
 	private int age = 0;
 
@@ -38,5 +38,5 @@ public class User {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	
+
 }

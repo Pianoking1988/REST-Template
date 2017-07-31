@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 server:
     port: 8080
 
@@ -19,3 +20,26 @@ spring:
 
 flyway:
     locations: db/migration/hsqldb,db/migration/postgre,db/migration/example
+=======
+server:
+    port: 8080
+
+spring:    
+    datasource:
+        driver-class-name: ${JDBC_DATABASE_DRIVER:org.hsqldb.jdbcDriver}
+        url: ${JDBC_DATABASE_URL:jdbc:hsqldb:mem:dataSource}
+        user: ${JDBC_DATABASE_USERNAME:sa}
+        password: ${JDBC_DATABASE_PASSWORD:}
+        type: com.zaxxer.hikari.HikariDataSource
+        hikari:
+            minimum-idle: 1
+            maximum-pool-size: 2
+            pool-name: hikariPool
+    jpa:
+        generate-ddl: false
+        hibernate:
+            ddl-auto: none
+                        
+flyway:
+    locations: db/migration/common,db/migration/hsqldb,db/migration/postgre,db/migration/example
+>>>>>>> origin/master

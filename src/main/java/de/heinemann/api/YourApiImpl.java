@@ -10,10 +10,10 @@ import de.heinemann.repository.UserRepository;
 
 @Component
 public class YourApiImpl implements YourApi {
-	
+
 	@Autowired
 	private UserRepository userRepository;
-	
+
 	@Override
 	public List<User> getUsers() {
 		return userRepository.findAll();
@@ -23,5 +23,5 @@ public class YourApiImpl implements YourApi {
 	public User getUser(long id) {
 		return new User(id, "user" + id + "@rest.de", "admin");
 	}
-	
+
 }
