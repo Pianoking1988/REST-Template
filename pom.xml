@@ -18,6 +18,7 @@
 		<swagger2.version>2.6.1</swagger2.version>
 		<modelmapper.version>1.0.0</modelmapper.version>
 		<postgres.version>9.4.1208</postgres.version>
+		<mysql.version>5.1.43</mysql.version>
 		<hsqldb.version>2.3.2</hsqldb.version>
 		<flyway.version>4.0.3</flyway.version>
 		<dbunit.version>2.5.0</dbunit.version>
@@ -95,6 +96,23 @@
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
+		</dependency>
+
+		<!-- Driver for oracle database. Only necessary if oracle database is used.
+		     Oracle drivers are not available within maven. Therefore driver is taken from lib folder. -->
+		<dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc7</artifactId>
+            <version>12.1.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/ojdbc7.jar</systemPath>
+        </dependency>
+
+		<!-- Driver for mysql database. Only necessary if mysql database is used. -->
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>${mysql.version}</version>
 		</dependency>
 
 		<!-- Driver for hsqldb database. Necessary for instant local run after downloading sources

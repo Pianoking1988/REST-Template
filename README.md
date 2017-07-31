@@ -6,6 +6,10 @@ Template for any REST based webservice, including:
 * REST versionizing via /v1/..., /v2/...
 * documentation of the interfaces via Swagger
 
+## How to ...
+
+* ... connect my own database instead of the in-memory database ?
+
 ## Technologies
 
 * _Spring-Boot_ / _Spring_
@@ -17,6 +21,5 @@ Template for any REST based webservice, including:
 ## Still missing / In the future
 
 * Logback
-* Database & In-Memory Database
 * JGiven
 * Lombok for automatic generation of getters, setters and boilerplate class methods

@@ -1,2 +1,18 @@
+spring:
+    datasource:
+        driver-class-name: org.hsqldb.jdbcDriver
+        url: jdbc:hsqldb:mem:dataSource
+        user: sa
+        password:
+        type: com.zaxxer.hikari.HikariDataSource
+        hikari:
+            minimum-idle: 1
+            maximum-pool-size: 2
+            pool-name: hikariPool
+    jpa:
+        generate-ddl: false
+        hibernate:
+            ddl-auto: none
+
 flyway:
     locations: db/migration/hsqldb,db/migration/postgre
