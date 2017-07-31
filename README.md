@@ -6,6 +6,8 @@ Template for any REST based webservice, including:
 * REST versionizing via /v1/..., /v2/...
 * documentation of the interfaces via Swagger
 * instant running via in-memory database which can by replaced with a local database individually by each user
+* integration tests by calling urls via _MockMvc_
+* testing with in_memory database in junit tests via _DbUnit_
 
 ## How to ...
 
